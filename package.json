@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://elnuklear.github.io/Random-Quote-Generator/",
+  "homepage": "https://elnuklear.github.io/src/main.tsx",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
