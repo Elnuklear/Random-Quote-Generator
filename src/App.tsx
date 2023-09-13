@@ -19,6 +19,9 @@ const getRandomColor = (): string => {
 
   return `rgb(${red}, ${green}, ${blue}`
 }
+
+const transition = "all 1s"
+
 function App() {
   const [quote, setQuote] = useState<Quote>(getRandomQuote())
   const [randomColor, setRandomColor] = useState<string>(getRandomColor())
@@ -30,29 +33,30 @@ function App() {
 
   return (
     <>
-     <div className="background" style={{ backgroundColor: randomColor }}>
+     <div className="background" style={{ backgroundColor: randomColor, transition }}>
       <div id="quote-box">
-        <div className="quote-content" style={{ color: randomColor }}>
-          <FaQuoteLeft size="30" style={{ marginRight: "10px" }} />
+        <div className="quote-content" style={{ color: randomColor, transition }}>
           <h2 id="text">
+          <FaQuoteLeft size="30" style={{ marginRight: "10px" }} />
             {quote.quote}
-          </h2>
           <FaQuoteRight size="30" style={{ marginLeft: "10px" }} />
+          </h2>
           <h4 id="author">
             {quote.author}
           </h4>
           <div className="buttons">
             <a 
-              href={`https://twittwe.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote.quote}`}
+              href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote.quote}`}
               id="tweet-quote"
               style={{
                 backgroundColor: randomColor,
                 marginRight: "10px",
+                transition
               }}
               >
                 <FaTwitter color="white" />
             </a>
-            <button id="new-quote" onClick={changeQuote} style={{ backgroundColor: randomColor }}>New Quote</button>
+            <button id="new-quote" onClick={changeQuote} style={{ backgroundColor: randomColor, transition }}>New Quote</button>
           </div>
         </div>
       </div>
