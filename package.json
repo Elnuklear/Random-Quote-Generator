@@ -6,15 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "react-icons": "^4.11.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
